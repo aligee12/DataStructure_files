@@ -40,15 +40,17 @@ void merge(int arr[], int l, int mid, int r){
 void mergeSort(int arr[],int l,int r){
     if(l < r){
         int mid = (l+r)/2 ;
+        //recurrsively dividing array into half
         mergeSort(arr,l,mid);        
         mergeSort(arr,mid+1,r);
     
+        //merging the divided arrays
         merge(arr,l,mid,r);
     }
 }
 int main(){
     int array[] = {5,4,3,2,1};    
-    mergeSort(array,0,4);
+    mergeSort(array,0,4);       //left and right indices of array
     cout << "\nSorted array elements: ";
     for(int i =0; i<5; i++){        
         cout << array[i] << " ";
